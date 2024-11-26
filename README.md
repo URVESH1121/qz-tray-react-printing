@@ -20,6 +20,10 @@ QZ-Tray is a versatile printing utility that simplifies printing and browser int
 
 ### 1. Official Download Methods
 
+#### Download Link
+
+Official Download Page: [https://qz.io/download/](https://qz.io/download/)
+
 #### Linux (Ubuntu/Debian)
 
 ```bash
@@ -60,3 +64,7 @@ curl qz.sh | bash
 - Launch your React application
 - Select and configure your desired printer
 - Begin printing through the QZ-Tray interface
+
+## Additional Resources
+
+- Download Page: [https://qz.io/download/](Download Qz App)
