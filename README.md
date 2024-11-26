@@ -1,74 +1,62 @@
-# qz-tray-react-printing
+# QZ-Tray Setup Instructions
 
-A React-based example for integrating QZ-Tray to enable seamless printing from web applications. This repository demonstrates how to configure, communicate with, and utilize QZ-Tray for automated and printing tasks. Perfect for applications requiring web-to-printer functionality.
+## Overview
 
-# Getting Started with Create React App
+QZ-Tray is a versatile printing utility that simplifies printing and browser integration across different platforms.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Prerequisites
 
-## Available Scripts
+- Supported Operating Systems:
+  - Linux (Ubuntu/Debian)
+  - Windows
+  - MacOS
+- Recommended:
+  - Active internet connection
+  - Administrative/sudo privileges
+  - Compatible web browser
+  - Node.js and npm installed
 
-In the project directory, you can run:
+## Download and Installation
 
-### `npm start`
+### 1. Official Download Methods
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Linux (Ubuntu/Debian)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+wget -qO - qz.sh | bash
+```
 
-### `npm test`
+#### Windows
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```powershell
+irm pwsh.sh | iex
+```
 
-### `npm run build`
+#### MacOS
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+curl qz.sh | bash
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Post-Installation Steps
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### First-Time Launch
 
-### `npm run eject`
+1. Open and start QZ-Tray application
+2. Navigate to your React project directory
+3. Install project dependencies and start the application
+   ```bash
+   npm install
+   npm start
+   ```
+4. In the QZ-Tray interface:
+   - Choose the printer you want to add
+   - Configure printer settings
+   - Click on the print button to test your configuration
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Quick Start Guide
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Ensure QZ-Tray is running
+- Launch your React application
+- Select and configure your desired printer
+- Begin printing through the QZ-Tray interface
