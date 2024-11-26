@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - develop
 
 jobs:
   deploy:
@@ -29,4 +30,8 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
           npm install -g vercel
-          vercel --prod --token $VERCEL_TOKEN --confirm --yes
+          if [[ $GITHUB_REF_NAME == "main" ]]; then
+            vercel --prod --token $VERCEL_TOKEN --confirm --yes
+          elif [[ $GITHUB_REF_NAME == "develop" ]]; then
+            vercel --token $VERCEL_TOKEN --confirm --yes
+          fi
