@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h2>Production Env (Checking)</h2>
         <h1>qzTray Printer Integration</h1>
         <PrinterComponent />
       </header>
