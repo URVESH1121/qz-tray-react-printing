@@ -9,29 +9,46 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: ${{ github.ref_name == 'main' && 'production' || 'development' }}
 
     steps:
+      # Step 1: Checkout the repository code
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Step 2: Set up Node.js
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
+      # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
 
+      # Step 4: Build the project
       - name: Build the project
         run: CI=false npm run build
 
+      # Step 5: Deploy to Vercel
       - name: Deploy to Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
           npm install -g vercel
           if [[ $GITHUB_REF_NAME == "main" ]]; then
+            echo "Deploying to Production Environment..."
             vercel --prod --token $VERCEL_TOKEN --confirm --yes
           elif [[ $GITHUB_REF_NAME == "develop" ]]; then
+            echo "Deploying to Development Environment..."
             vercel --token $VERCEL_TOKEN --confirm --yes
+          fi
+
+      # Step 6: Output Environment URL (Optional, for debugging/logging)
+      - name: Output Environment
+        run: |
+          if [[ $GITHUB_REF_NAME == "main" ]]; then
+            echo "Deployed to Production: https://qz-tray-react-printing.vercel.app"
+          elif [[ $GITHUB_REF_NAME == "develop" ]]; then
+            echo "Deployed to Development: https://qz-tray-react-printing-dev.vercel.app"
           fi
